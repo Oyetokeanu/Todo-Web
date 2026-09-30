@@ -1,0 +1,360 @@
+/* =========================
+   GENERAL STYLING
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   TODO CONTAINER
+========================= */
+
+.todo-container {
+    width: 100%;
+    max-width: 550px;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+    text-align: center;
+
+    color: #333;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   INPUT AREA
+========================= */
+
+.input-container {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    flex: 1;
+
+    padding: 14px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+#taskInput:focus {
+    border-color: #667eea;
+}
+
+
+/* =========================
+   ADD BUTTON
+========================= */
+
+#addButton {
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #667eea;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#addButton:hover {
+    background: #5568d9;
+}
+
+
+/* =========================
+   FILTER BUTTONS
+========================= */
+
+.filters {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 15px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: #eee;
+
+    color: #333;
+
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background: #667eea;
+
+    color: white;
+}
+
+
+/* =========================
+   TASK LIST
+========================= */
+
+#taskList {
+    list-style: none;
+}
+
+
+/* =========================
+   INDIVIDUAL TASK
+========================= */
+
+.task {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px;
+
+    background: #f7f7f7;
+
+    margin-bottom: 10px;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.task:hover {
+    background: #eeeeee;
+}
+
+
+/* =========================
+   CHECKBOX
+========================= */
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   TASK TEXT
+========================= */
+
+.task-text {
+    flex: 1;
+
+    color: #333;
+
+    word-break: break-word;
+}
+
+
+/* Completed task */
+
+.task.completed .task-text {
+    text-decoration: line-through;
+
+    color: #999;
+}
+
+
+/* =========================
+   TASK BUTTONS
+========================= */
+
+.task-buttons {
+    display: flex;
+
+    gap: 5px;
+}
+
+
+/* Edit button */
+
+.edit-btn {
+    border: none;
+
+    padding: 7px 10px;
+
+    border-radius: 5px;
+
+    background: #f39c12;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background: #d68910;
+}
+
+
+/* Delete button */
+
+.delete-btn {
+    border: none;
+
+    padding: 7px 10px;
+
+    border-radius: 5px;
+
+    background: #e74c3c;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
+
+/* =========================
+   BOTTOM SECTION
+========================= */
+
+.bottom-section {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 20px;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+/* Clear completed */
+
+#clearCompleted {
+    border: none;
+
+    background: none;
+
+    color: #e74c3c;
+
+    cursor: pointer;
+}
+
+#clearCompleted:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   EMPTY MESSAGE
+========================= */
+
+.empty-message {
+    text-align: center;
+
+    color: #999;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 500px) {
+
+    .todo-container {
+        padding: 20px;
+    }
+
+    .input-container {
+        flex-direction: column;
+    }
+
+    #addButton {
+        width: 100%;
+    }
+
+    .bottom-section {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .task {
+        align-items: flex-start;
+    }
+
+    .task-buttons {
+        flex-direction: column;
+    }
+}
